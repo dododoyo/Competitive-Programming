@@ -1,5 +1,4 @@
-public class CountingSort_Part2 
-{import java.io.*;
+import java.io.*;
     import java.math.*;
     import java.security.*;
     import java.text.*;
@@ -51,8 +50,10 @@ public class CountingSort_Part2
     
     }
     
-    public class Solution {
-        public static void main(String[] args) throws IOException {
+    public class Solution 
+    {
+        public static void main(String[] args) throws IOException 
+        {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
     
@@ -77,4 +78,4 @@ public class CountingSort_Part2
     }
     
     
-}
+
