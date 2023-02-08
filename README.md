@@ -4,7 +4,7 @@
 </div>
 
 
-Welcome to my competitive programming repository! This is where I track my progress and share my solutions to various algorithmic problems.
+## Welcome to my competitive programming repository! This is where I track my progress and share my solutions to various algorithmic problems.
 
 ## Problem Solving Techniques
 
