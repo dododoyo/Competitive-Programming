@@ -1,4 +1,8 @@
 # Competitive Programming
+<div align="center">
+   <a href="https://leetcode.com/Dooyo/"><img align="center" src="https://stats.justsong.cn/api/leetcode?username=Dooyo" width="100%" /></a>
+</div>
+
 
 Welcome to my competitive programming repository! This is where I track my progress and share my solutions to various algorithmic problems.
 
