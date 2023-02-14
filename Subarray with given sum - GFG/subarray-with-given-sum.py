@@ -19,8 +19,11 @@ class Solution:
                 total_sum -= arr[p1]
                 p1 += 1
             p2 += 1
+            
             if(total_sum == s):
                 return [p1+1,p2]
+            
+        
                 
         return [-1]
     
