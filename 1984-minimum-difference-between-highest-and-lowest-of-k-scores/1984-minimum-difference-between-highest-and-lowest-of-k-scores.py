@@ -10,8 +10,7 @@ class Solution:
         dif = 10**6
         
         while(rht_pntr < length):
-            cur_dif = max(nums[lft_pntr:rht_pntr+1]) - min(nums[lft_pntr:rht_pntr+1])
-            dif = min(cur_dif,dif)
+            dif = min(dif,nums[rht_pntr] - nums[lft_pntr])
             rht_pntr += 1
             lft_pntr += 1
             
