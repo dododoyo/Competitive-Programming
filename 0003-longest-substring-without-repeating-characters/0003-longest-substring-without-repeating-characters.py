@@ -16,8 +16,8 @@ class Solution:
             if(s[r] in s[l:r]):
                 l += 1
             else:
+                max_len = max(max_len,r-l+1)
                 r += 1
-                max_len = max(max_len,r-l)
         return max_len
         
         
