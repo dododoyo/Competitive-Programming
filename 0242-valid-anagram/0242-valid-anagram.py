@@ -5,5 +5,5 @@ class Solution:
          
         
         
-        return "".join(sorted(s)) == "".join(sorted(t))
+        return sorted(s) == sorted(t)
         
