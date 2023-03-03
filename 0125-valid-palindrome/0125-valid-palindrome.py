@@ -5,11 +5,11 @@ class Solution:
         s = s.lower()
         
         while(p1 < p2):
-            while((p1 < p2) and (not s[p1].isalnum())):
+            if (not s[p1].isalnum()):
                 p1 += 1
                 continue
             
-            while((p1 < p2) and (not s[p2].isalnum())):
+            if (not s[p2].isalnum()):
                 p2 -= 1
                 continue
                 
