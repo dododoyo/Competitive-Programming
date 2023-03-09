@@ -22,6 +22,7 @@ def isValid(s):
         #testing for empty strings
         if each_str == "":
             return 0
+            
         #testing if strings are not numbers
         if not each_str.isnumeric():
             return 0
@@ -33,7 +34,7 @@ def isValid(s):
         each_num = int(each_str)
         
         #testing if each nums is within range
-        if (not (each_num > -1 and each_num < 256 )): 
+        if (each_num > 255 or each_num < 0 ): 
             return 0
             
     return 1
