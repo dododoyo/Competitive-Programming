@@ -4,15 +4,14 @@ class Solution:
     #Function to find the leaders in the array.
     def leaders(self, A, N):
         #Code here
-        #let's use a stack starting from the end
+        #let's use a variable
         solution = [A[-1]]
-        stk = [A[-1]]
+        max_til_now = A[-1]
         
         for i in range(N-2,-1,-1):
-            if(A[i] >= stk[-1]):
-                stk.pop()
-                stk.append(A[i])
-                solution.append(A[i])
+            if(A[i] >= max_til_now):
+                max_til_now = A[i]
+                solution.append(max_til_now)
         solution.reverse()
         return solution   
 
