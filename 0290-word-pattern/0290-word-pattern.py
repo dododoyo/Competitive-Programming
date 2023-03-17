@@ -2,16 +2,23 @@ class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         len_s = len(pattern)
         
-        #take care of some base cases
-        
         
         s_list = s.split()
         
+        #take care of some base cases
+        
+        #if the length of the pattern and the string aren't
+        #same return false
         if(len_s != len(s_list)):
             return False
+        
+        #if the length is the same and length of s is 1
+        #return true
         if(len_s == 1):
             return True
-            
+        #dealing with base cases over!
+        
+        
         s_dict = {}
         
         for i in range(len_s):
