@@ -6,17 +6,17 @@ class Solution:
         if(s_len == 1):
             return s
         
-        stk = [s[0]]
+        stk = []
         
-        for i in range(1,s_len):
+        for i in s:
             if(len(stk) == 0):
-                stk.append(s[i])
+                stk.append(i)
                 
             else:
                 #easier way to check if not great will be using ascii value
-                if(abs(ord(stk[-1]) - ord(s[i])) == 32):
+                if(abs(ord(stk[-1]) - ord(i)) == 32):
                     stk.pop()
                 else:
-                    stk.append(s[i])
+                    stk.append(i)
 
         return "".join(stk)
