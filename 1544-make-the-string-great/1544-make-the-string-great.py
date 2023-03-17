@@ -3,7 +3,7 @@ class Solution:
         stk = []
         
         for i in s:
-            if(not stk):
+            if(len(stk) == 0):
                 stk.append(i)
                 
             else:
