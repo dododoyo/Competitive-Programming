@@ -1,33 +1,48 @@
-import java.util.*;
 class Solution {
     public int romanToInt(String s) 
     {
-        int s_len = s.length();
-        HashMap<Character, Integer> romanMap = new HashMap<>(); 
-        romanMap.put('I',1);
-        romanMap.put('V',5);
-        romanMap.put('X',10);
-        romanMap.put('L',50);
-        romanMap.put('C',100);
-        romanMap.put('D',500);
-        romanMap.put('M',1000);
-        
-        int solution = 0;
-        int i = 0;
-        while(i < s_len)
+        int theNumber=0;
+        int stringLength = s.length();
+        for (int index = 0; index < stringLength;index++)
         {
-            if(i != (s_len - 1) && romanMap.get(s.charAt(i)) < romanMap.get(s.charAt(i+1)) )
             {
-                solution += romanMap.get(s.charAt(i+1)) - romanMap.get(s.charAt(i));
-                i += 2; 
+                if (index != stringLength -1)
+                {
+                    if(romanToNumber(s.charAt(index)) < romanToNumber(s.charAt(index+1)))
+                    {
+                        theNumber += romanToNumber(s.charAt(index+1)) - romanToNumber(s.charAt(index));
+                        index++;
+                    }
+                    else
+                        theNumber += romanToNumber(s.charAt(index));
+
+                }
+                else
+                theNumber += romanToNumber(s.charAt(index));
             }
-            else
-            {
-                solution += romanMap.get(s.charAt(i));
-                i++;   
-            }
-            
         }
-        return solution;
+
+        return theNumber;
+        
+    }
+    public static int romanToNumber(char roman)
+    {
+        if (roman == 'I')
+        return 1;
+        if (roman == 'V')
+        return 5;
+        if (roman == 'X')
+        return 10;
+        if (roman == 'L')
+        return 50;
+        if (roman == 'C')
+        return 100;
+        if (roman == 'D')
+        return 500;
+        if (roman == 'M')
+        return 1000;
+        else
+        return 0;
+        
     }
 }
