@@ -7,6 +7,9 @@ class Solution:
                    max_index = j
             nums[i],nums[max_index] = nums[max_index],nums[i]
             
-        solution = [str(i) for i in nums]
-        return str(int("".join(solution)))
+        solution = ""
+        for i in nums:
+            solution += str(i)
+        
+        return str(int(solution))
         
