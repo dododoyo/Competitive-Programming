@@ -1,6 +1,6 @@
 # Competitive Programming
 <div align="center">
-   <a href="https://leetcode.com/Dooyo/"><img align="center" src="https://stats.justsong.cn/api/leetcode?username=Dooyo" width="100%" /></a>
+   <a href="https://leetcode.com/dododoyo/"><img align="center" src="https://stats.justsong.cn/api/leetcode?username=dododoyo" width="100%" /></a>
 </div>
 
 
