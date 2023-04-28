@@ -1,12 +1,12 @@
+from collections import defaultdict
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        nums1.sort();nums2.sort()
+        freq = defaultdict(int)
         solution = []
-        i,j = 0,0
-        while(i < len(nums1) and j < len(nums2)):
-            if nums1[i] > nums2[j]:j+=1;
-            elif nums1[i] < nums2[j]:i+=1;
-            else:
-                solution.append(nums1[i]);i+=1;j+=1;
-        return solution;
+        for i in nums1: freq[i] += 1
+        for j in nums2:
+            if j in freq and freq[j] > 0:
+                    solution.append(j);freq[j] -= 1
+        return solution
+        
                 
