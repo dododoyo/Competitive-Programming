@@ -5,13 +5,16 @@
 #         self.next = next
 class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        #edge case if the node is only one remove it
+        #if the linkedlist has only one node remove it 
         if head.next == None:return None
-        fast,slow = head.next.next,head
-        #loop to detect end and middle of list
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
-        #code to remove middle
-        slow.next = slow.next.next
+        
+        slow_pointer = head
+        fast_pointer = head.next.next
+        
+        
+        while fast_pointer != None and fast_pointer.next != None:
+            fast_pointer = fast_pointer.next.next
+            slow_pointer = slow_pointer.next
+        
+        slow_pointer.next = slow_pointer.next.next
         return head
