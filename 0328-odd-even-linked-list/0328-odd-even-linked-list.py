@@ -5,13 +5,12 @@
 #         self.next = next
 class Solution:
     def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if head == None or head.next == None:return head
-        even_start = even = head.next
-        odd = head
-        #no need to check for odd != None 
-        #because it comes before even
-        while even != None and even.next != None:#O(n)
-            odd.next = odd.next.next;odd = odd.next #O(1)
-            even.next = even.next.next;even = even.next#O(1)
-        odd.next = even_start#O(1)
+        if head==None or head.next==None:return head
+        even_nodes =first_even= head.next
+        odd_nodes = head
+        
+        while even_nodes != None and even_nodes.next != None:
+            odd_nodes.next = odd_nodes.next.next;odd_nodes=odd_nodes.next;
+            even_nodes.next = even_nodes.next.next;even_nodes=even_nodes.next;
+        odd_nodes.next = first_even
         return head
