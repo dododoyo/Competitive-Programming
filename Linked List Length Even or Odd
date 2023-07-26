@@ -1,0 +1,35 @@
+# Linked List Length Even or Odd?
+## Easy
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a linked list of size <strong>N</strong>, your task is to complete the&nbsp;function <strong>isLengthEvenOrOdd() </strong>which contains <strong>head</strong> of the linked list and check whether the length of linked list is even or odd.</span></p>
+
+<p><span style="font-size:18px"><strong>Input:</strong><br>
+The input line contains <strong>T</strong>, denoting the number of testcases. Each testcase contains two lines. the first line contains <strong>N</strong>(size of the linked list). the second line contains N elements of the linked list separated by space.</span></p>
+
+<p><span style="font-size:18px"><strong>Output:</strong><br>
+For each testcase in new line, print "<strong>even</strong>"(without quotes) if the length is even else "<strong>odd</strong>"(without quotes) if the length is odd.</span></p>
+
+<p><span style="font-size:18px"><strong>User Task:</strong><br>
+Since this is a functional problem you don't have to worry about input, you just have to&nbsp; complete the function <strong>isLengthEvenOrOdd()&nbsp;</strong>which takes head of the linked list as input parameter and <strong>returns 0 if the length of the linked list is even otherwise returns 1</strong>.</span></p>
+
+<p><span style="font-size:18px"><strong>Constraints:</strong><br>
+1 &lt;= T &lt;= 100<br>
+1 &lt;= N &lt;= 10<sup>3</sup><br>
+1 &lt;= A[i] &lt;= 10<sup>3</sup></span></p>
+
+<p><span style="font-size:18px"><strong>Example:<br>
+Input:</strong><br>
+2<br>
+3<br>
+9 4 3<br>
+6<br>
+12 52 10 47 95 0</span></p>
+
+<p><span style="font-size:18px"><strong>Output:</strong><br>
+Odd<br>
+Even</span></p>
+
+<p><span style="font-size:18px"><strong>Explanation:<br>
+Testcase 1: </strong>The length of linked list is 3 which is odd.<br>
+<strong>Testcase 2</strong>: The length of linked list is 6 which is even.</span><br>
+&nbsp;</p>
+</div>
