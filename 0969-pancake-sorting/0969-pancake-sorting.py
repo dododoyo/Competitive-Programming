@@ -1,5 +1,12 @@
 class Solution:
     def pancakeSort(self, arr: List[int]) -> List[int]:
+                # let's first check if it is sorted 
+        sorted = True
+        for i in range(1,len(arr)):
+            if arr[i-1] > arr[i]:
+                sorted = False;break
+        if sorted:
+            return []
         sol = []
         for i in range(len(arr),0,-1):
             flipIndex = self.getFlipIndex(arr,i)
