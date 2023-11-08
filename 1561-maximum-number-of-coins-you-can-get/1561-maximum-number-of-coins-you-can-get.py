@@ -1,10 +1,13 @@
 class Solution:
     def maxCoins(self, piles: List[int]) -> int:
         piles.sort()
-        bob,me,alc = 0,len(piles)-2,len(piles)-1
-        sol = 0
-        while bob < me:
-            sol += piles[me]
-            bob,me,alc = bob+1,me-2,alc-2
-        return sol
-        
+        total = 0
+        remaining_chances = len(piles)//3
+        my_position = -2
+        while remaining_chances:
+            total += piles[my_position]
+            my_position -= 2
+            remaining_chances -= 1
+        return total
+            
+            
