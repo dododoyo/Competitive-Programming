@@ -5,9 +5,8 @@ class Solution:
     def convertToWave(self, n : int, a : List[int]) -> None:
         left,right = 0,1
         while right < n:
-            a[left],a[right] = a[right],a[left]
-            left += 2
-            right += 2
+            a[left],a[right]=a[right],a[left]
+            left +=2;right+=2;
         return a
         
         
