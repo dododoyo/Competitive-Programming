@@ -1,8 +1,5 @@
-n = int(input())
-solution = count = 0
-for i in range(n):
-    for j in input():
-        if j == '1':count += 1
-    if count > 1:solution += 1
-    count = 0
+solution = 0
+for _ in range(int(input())):
+  current_question_vote = list(map(int,input().split()))
+  solution += sum(current_question_vote) > 1;
 print(solution)
