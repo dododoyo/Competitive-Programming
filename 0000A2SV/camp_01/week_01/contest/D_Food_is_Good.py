@@ -3,10 +3,9 @@ for _ in range(int(input())):
   cakes = [int(i) for i in input().split()]
   aman, simon = float('-inf'), sum(cakes)
   current_sum,current_length = 0,0
-
   # kdane's algorithm with length limitation
   for i in range(n):
-      if current_sum + cakes[i] > cakes[i]:
+      if cakes[i] > 0:
           current_sum += cakes[i]
           current_length += 1
       else:
