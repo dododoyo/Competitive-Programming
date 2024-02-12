@@ -9,13 +9,13 @@ class Solution:
         while n > 0:
             right = right.next
             n -= 1
+
         if right == None:
             return head.next
 
         while right and right.next:
             right,left = right.next,left.next
-            
-        if left.next:left.next = left.next.next
-        else:left.next = None
+        
+        left.next = left.next.next
         return head
         
