@@ -4,23 +4,26 @@ class Solution:
         subarray's minimum will this number be ?
         """
         MOD = 10**9 + 7
-        prefix_arr = self.getMinCount(arr,True)
-        suffix_arr = self.getMinCount(arr[::-1],False)
-        suffix_arr = suffix_arr[::-1]
-        solution = [prefix_arr[i]*suffix_arr[i]*arr[i] for i in range(len(arr))]
-
+        elmnt_span = self.getMinCount(arr)
+        solution = [elmnt_span[i]*arr[i] for i in range(len(arr))]
         return sum(solution)%MOD
-    def getMinCount(self,arr,flag):
-        mon_stack = []
-        solution = [0]*len(arr)
-        for i in range(len(arr)):
-            while mon_stack and mon_stack[-1][1] + flag > arr[i]:
-                mon_stack.pop()
+
+    def getMinCount(self,arr):
+        mon_stack,n = [],len(arr)
+        solution = [1]*n
+        for i in range(n):
+            while mon_stack and mon_stack[-1][1] >= arr[i]:
+                popped = mon_stack.pop()
+                solution[popped[0]] *= i-popped[0]
             if mon_stack:
                 max_till = i - mon_stack[-1][0]
             else:
                 max_till = i+1
-            solution[i] = max_till
+            solution[i] *= max_till
             mon_stack.append([i,arr[i]])
+        while mon_stack:
+            popped = mon_stack.pop()
+            solution[popped[0]] *= n-popped[0]
+
         return solution
         
