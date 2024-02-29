@@ -1,17 +1,16 @@
 class Solution:
     def predictTheWinner(self, nums: List[int]) -> bool:
-        
-        def helper(l,r):
-            if l == r:
-                return nums[l]
-
-            leftPick = nums[l] - helper(l+1,r)
-            rightPick = nums[r] - helper(l,r-1);-1
+        @cache
+        def play_game(left,right,turn):
+            if left == right:
+                return nums[left]
             
-            return max(leftPick,rightPick)
-
-        if helper(0,len(nums)-1) >=0:
-            return 1
-
-        return 0
-            
+            if turn:
+                leftChoice = nums[left] + play_game(left+1,right,not turn)
+                rightChoice = nums[right] + play_game(left,right-1,not turn)
+                return max(leftChoice, rightChoice)
+            else:
+                leftChoice = -nums[left] + play_game(left+1,right,not turn)
+                rightChoice = -nums[right] + play_game(left,right-1,not turn)
+                return min(leftChoice, rightChoice)
+        return play_game(0,len(nums)-1,True) >= 0
