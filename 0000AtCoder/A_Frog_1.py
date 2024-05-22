@@ -15,7 +15,7 @@ for index in range(1, n):
         two_jump_cost = abs(stones[index] - stones[index-2])
         total_two_jump = two_jump_cost + two_down
 
-    two_down = one_down # next two down will be current one down
+    two_down = one_down  # next two down will be current one down
     one_down = min(total_two_jump, total_one_jump)
 
 print(one_down)

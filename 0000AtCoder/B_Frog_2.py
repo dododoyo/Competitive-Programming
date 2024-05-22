@@ -1,4 +1,4 @@
-n,k = map(int,input().split())
+n, k = map(int, input().split())
 stones = [int(num) for num in input().split()]
 dp = [0]*n
 

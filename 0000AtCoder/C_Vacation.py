@@ -41,7 +41,7 @@ def main():
     #     memo[current_day][prev_selection] = solution
 
     #     return memo[current_day][prev_selection]
-    
+
     # memo = [[-1 for _ in range(4)]for _ in range(days)]
     # for i in range(4):
     #     solution = -float('inf')
@@ -53,7 +53,7 @@ def main():
     # for current_day in range(1,days):
     #     for prev_task in range(4):
 
-    #         current_solution = 0 
+    #         current_solution = 0
 
     #         for current_task in range(3):
     #             if prev_task != current_task:
@@ -62,7 +62,7 @@ def main():
     #                 current_point = days_score[current_day][current_task]
 
     #                 current_solution = max(current_solution,prev_solution+current_point)
-                
+
     #         memo[current_day][prev_task] = current_solution
 
     # # for the algorithm for to  find for all
@@ -76,16 +76,16 @@ def main():
     for i in range(4):
         solution = -float('inf')
         for j in range(3):
-                if i != j:
-                    solution = max(solution, days_score[0][j])
-        prev_day[i]= solution
+            if i != j:
+                solution = max(solution, days_score[0][j])
+        prev_day[i] = solution
 
     today = prev_day[:]
 
-    for current_day in range(1,days):
+    for current_day in range(1, days):
         for prev_task in range(4):
 
-            current_solution = 0 
+            current_solution = 0
 
             for current_task in range(3):
                 if prev_task != current_task:
@@ -93,8 +93,9 @@ def main():
                     prev_solution = prev_day[current_task]
                     current_point = days_score[current_day][current_task]
 
-                    current_solution = max(current_solution,prev_solution+current_point)
-                
+                    current_solution = max(
+                        current_solution, prev_solution+current_point)
+
             today[prev_task] = current_solution
         prev_day = today[:]
 
