@@ -26,11 +26,12 @@ memo = [[0 for _ in range(n+1)] for _ in range(n+1)]
 
 # probability of getting zero heads from zero coins is one
 memo[0][0] = 1
+
 for index in range(1, n+1):
     for head_count in range(index+1):
         if_head, if_tail = 0, 0
 
-        if head_count > 0:
+        if head_count != 0:
             if_head = probabilities[index-1] * memo[index-1][head_count-1]
 
         if_tail = (1 - probabilities[index-1]) * memo[index-1][head_count]
