@@ -2,7 +2,6 @@
 
 n = int(input())
 probabilities = [float(num) for num in input().split()]
-
 memo = [[0 for _ in range(n+1)] for _ in range(n+1)]
 
 
@@ -22,7 +21,6 @@ memo = [[0 for _ in range(n+1)] for _ in range(n+1)]
 #   return memo[index][head_count]
 
 # print(find_prob(n-1,0))
-
 
 # probability of getting zero heads from zero coins is one
 memo[0][0] = 1
