@@ -6,20 +6,20 @@ def mt(rows): return[list(map(int, inp().split())) for _ in range(rows)]
 n,s = ls()
 arr = ls()
 
-
-solution = 0
-
 left = 0
+count = 0
 running_sum = 0
 
 for right in range(n):
   running_sum += arr[right]
-  
+
   while running_sum > s:
     running_sum -= arr[left]
     left += 1
-    
-  solution = max(solution,right-left+1)
 
-print(solution)
+  # each valid window will contribute 
+  # window number of subarrays
+  window = right-left+1
+  count += window
 
+print(count)
